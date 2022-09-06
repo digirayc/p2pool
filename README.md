@@ -6,15 +6,12 @@
 On Windows, pypy is only supported via the Windows Subsystem for Linux (WSL). P2pool on pypy on WSL is much faster than P2pool on
 CPython on native Windows. To install WSL, first follow the steps outlined here:
 
-
 https://msdn.microsoft.com/en-us/commandline/wsl/install_guide
-
 
 Once you've done that, run bash and follow the rest of the steps below.
 
 
 **P2pool installation with pypy -- Linux and Windows**
-
 
 Copy and paste the following commands into a bash shell in order to install p2pool on Windows or Linux.
 
@@ -54,15 +51,18 @@ Copy and paste the following commands into a bash shell in order to install p2po
 >sudo rm -r Twisted-15.4.0*
 
 
->git clone https://github.com/jtoomim/p2pool.git
+>git clone --branch rawtx https://github.com/digirayc/p2pool.git
 
 >cd p2pool
 
+>cd litecoin_scrypt
 
-You'll also need to install and run your bitcoind or altcoind of choice, and edit ~/.bitcoin/bitcoin.conf (or the corresponding file for litecoin or whatever other coin you intend to mine) with your bitcoind's RPC username and password. Launch your bitcoind or altcoind, and after it has finished downloading blocks and syncing, go to your p2pool directory and run
+>sudo pypy setup.py install
 
+You'll also need to install and run your bitcoind or altcoind of choice, and edit ~/.bitcoin/bitcoin.conf (or the corresponding file for cyberyen or whatever other coin you intend to mine) with your bitcoind's RPC username and password. Launch your bitcoind or cyberyend, and after it has finished downloading blocks and syncing, go to your p2pool directory and run
 
 >pypy run_p2pool.py
+
 
 **P2pool Dockerfile
 
@@ -78,17 +78,13 @@ Run p2pool from Docker image
 
 **jtoomimnet vs mainnet**
 
-
 If you wish to use the original forrestv btc mainnet instead of jtoomimnet, then replace
-
 
 >git clone https://github.com/jtoomim/p2pool.git
 
 >cd p2pool
 
-
 above with
-
 
 >git clone https://github.com/p2pool/p2pool.git
 
@@ -100,16 +96,13 @@ Note: The BTC p2pools currently have low hashrate, which means that payouts will
 
 **Miner setup**
 
-
 P2pool communicates with miners via the stratum protocol. For BTC, configure your miners with the following information:
-
 
 >URL: stratum+tcp://(Your node's IP address or hostname):9332
 
 >Worker: (Your bitcoin address)
 
 >Password: x
-
 
 
 Mining to Legacy (P2PKH), SegWit/MultiSig (P2SH) and Bech32 addresses are supported for the following coins with the specified address prefixes:
