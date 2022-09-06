@@ -61,7 +61,7 @@ Copy and paste the following commands into a bash shell in order to install p2po
 
 You'll also need to install and run your bitcoind or altcoind of choice, and edit ~/.bitcoin/bitcoin.conf (or the corresponding file for cyberyen or whatever other coin you intend to mine) with your bitcoind's RPC username and password. Launch your bitcoind or cyberyend, and after it has finished downloading blocks and syncing, go to your p2pool directory and run
 
->pypy run_p2pool.py
+>pypy run_p2pool.py --net cyberyen -a <your_address>
 
 
 **P2pool Dockerfile
