@@ -1,6 +1,6 @@
 from p2pool.bitcoin import networks
 
-PARENT = networks.nets['cybeyen']
+PARENT = networks.nets['cyberyen']
 SHARE_PERIOD = 15 # seconds
 CHAIN_LENGTH = 1*60//10 # shares
 REAL_CHAIN_LENGTH = 1*60//10 # shares
