@@ -1,3 +1,5 @@
+**!!! TEST VERSION !!!**
+
 **P2pool installation with pypy -- Windows**
 
 
@@ -21,7 +23,8 @@ Copy and paste the following commands into a bash shell in order to install p2po
 >sudo apt-get -y install pypy pypy-dev pypy-setuptools gcc build-essential git
 
 
->wget https://bootstrap.pypa.io/ez_setup.py -O - | sudo pypy
+>wget https://bootstrap.pypa.io/ez_setup.py -O- | sudo pypy
+
 >sudo rm setuptools-*.zip
 
 
@@ -115,7 +118,7 @@ Mining to Legacy (P2PKH), SegWit/MultiSig (P2SH) and Bech32 addresses are suppor
 |---------------|-------|-------|-------------------------------|
 |Bitcoin	|`1...`	|`3...`	|`bc1...`			|
 |Bitcoin Cash*	|`1...`	| (test)|`bitcoincash:q...` or `q...`	|
-|Bitcoin SV*	|`1...`	| (test)|`bitcoincash:q...` or `q...`	| 
+|Bitcoin SV*	|`1...`	| (test)|`bitcoincash:q...` or `q...`	|
 |Litecoin	|`L...`	|`M...`	|`ltc1...`			|
 * Bitcoin Cash and Bitcoin SV uses cashaddr instead of Bech32
 
@@ -128,4 +131,4 @@ If you wish to modify the mining difficulty, you may add something like "address
 **Firewall considerations**
 
 
-If your node is behind a firewall or behind NAT (i.e. on a private IP address), you may want to forward ports to your p2pool server. P2pool uses two ports: one for p2p communication with the p2pool network, and another for both the web UI and for stratum communication with workers. For Bitcoin, those ports are 9333 (p2p) and 9332 (stratum/web). For Litecoin, they are 9326 (p2p) and 9327 (stratum/web). For Bitcoin Cash, they are 9349 (p2p) and 9348 (stratum/web).
+If your node is behind a firewall or behind NAT (i.e. on a private IP address), you may want to forward ports to your p2pool server. P2pool uses two ports: one for p2p communication with the p2pool network, and another for both the web UI and for stratum communication with workers. For Bitcoin, those ports are 9333 (p2p) and 9332 (stratum/web). For Litecoin & Cyberyen, they are 9326 (p2p) and 9327 (stratum/web). For Bitcoin Cash, they are 9349 (p2p) and 9348 (stratum/web).
