@@ -18,7 +18,7 @@ RPC_CHECK = defer.inlineCallbacks(lambda bitcoind: defer.returnValue(
             (yield helper.check_block_header(bitcoind, '34458c96bb547193fa90b2f2599056684b0083d8a2996f2025943eb545031d29')) and
                           (yield bitcoind.rpc_getblockchaininfo())['chain'] == 'main'
         ))
-SUBSIDY_FUNC = lambda height: 1000000*100000000 >> (height + 1)//840000
+SUBSIDY_FUNC = lambda height: 50*100000000 >> (height + 1)//840000
 POW_FUNC = lambda data: pack.IntType(256).unpack(__import__('ltc_scrypt').getPoWHash(data))
 BLOCK_PERIOD = 150 # s
 SYMBOL = 'CY'
