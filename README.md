@@ -63,7 +63,7 @@ You'll also need to install and run your bitcoind or altcoind of choice, and edi
 
 >cd <p2pool_derectory>
 
->pypy run_p2pool.py --net cyberyen -a <your_cyberyen_address>
+>pypy run_p2pool.py --net cyberyen -a (your_cyberyen_address)
 
 
 **P2pool Dockerfile
@@ -102,7 +102,7 @@ P2pool communicates with miners via the stratum protocol. For BTC, configure you
 
 >URL: stratum+tcp://(Your node's IP address or hostname):9327
 
->Worker: (Your cyberyen address)
+>Worker: (your_cyberyen_address)
 
 >Password: x
 
